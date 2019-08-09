@@ -20,46 +20,37 @@ export default class QuoteBox extends Component {
     }
 
     getNewRandomQuote() {
-        getQuote()
-            .then(quote => {
-                this.setState({
-                    quote: {
-                        text: quote.text,
-                        author: quote.author
-                    }
-                })
-            })
-            .catch(() => {
-                this.setState({
-                    quote: {
-                        text: 'Error while fetching a new quote',
-                        author: 'The Error'
-                    }
-                })
-            });
+        let quote = getQuote();
+        this.setState({
+            quote: {
+                text: quote.text,
+                author: quote.author
+            }
+        });
     }
 
-    render() {
-        // prepare quote and twitter link
-        const quoteText = encodeURIComponent(`"${this.state.quote.text}"\n - ${this.state.quote.author}`);
-        const twitterLink = `https://twitter.com/intent/tweet/?text=${quoteText}&hashtags=FreeCodeCamp,RandomQuoteMachine`;
 
-        return (
-            <div>
-                <blockquote id="quote-box" className="quote-box text-center">
-                    <p id="text" className="quote-text">
-                        {this.state.quote.text}
-                    </p>
-                    <p id="author" className="quote-author">
-                        {this.state.quote.author}
-                    </p>
-                    <div className="buttons">
-                        <div id="new-quote" className="btn btn-secondary" onClick={this.getNewRandomQuote}>
-                            New Quote
+render() {
+    // prepare quote and twitter link
+    const quoteText = encodeURIComponent(`"${this.state.quote.text}"\n - ${this.state.quote.author}`);
+    const twitterLink = `https://twitter.com/intent/tweet/?text=${quoteText}&hashtags=FreeCodeCamp,RandomQuoteMachine`;
+
+    return (
+        <div>
+            <blockquote id="quote-box" className="quote-box text-center">
+                <p id="text" className="quote-text">
+                    {this.state.quote.text}
+                </p>
+                <p id="author" className="quote-author">
+                    {this.state.quote.author}
+                </p>
+                <div className="buttons">
+                    <div id="new-quote" className="btn btn-secondary" onClick={this.getNewRandomQuote}>
+                        New Quote
                         </div>
-                    </div>
-                </blockquote>
-            </div>
-        );
-    }
+                </div>
+            </blockquote>
+        </div>
+    );
+}
 }
