@@ -43,15 +43,6 @@ export default class QuoteBox extends Component {
         // prepare quote and twitter link
         const quoteText = encodeURIComponent(`"${this.state.quote.text}"\n - ${this.state.quote.author}`);
         const twitterLink = `https://twitter.com/intent/tweet/?text=${quoteText}&hashtags=FreeCodeCamp,RandomQuoteMachine`;
-        let paperFooterStyle = {
-            zIndex: 50,
-            fontSize: '0.9em'
-        }
-        let paperQuoteStyle = {
-            color: '#9fcc25',
-            marginLeft: '4px',
-            verticalAlign: 'middle'
-        }
 
         return (
             <div>
@@ -68,13 +59,6 @@ export default class QuoteBox extends Component {
                         </div>
                     </div>
                 </blockquote>
-
-                <footer>
-                    <span style={paperFooterStyle}>
-                        <img src="http://api.paperquotes.com/static/images/paperquotes.png" height="20" width="20" alt="paperquotes.com" />
-                        <a href="http://paperquotes.com" title="Powered by quotes from paperquotes.com" style={paperQuoteStyle}>paperquotes.com</a>
-                    </span>
-                </footer>
             </div>
         );
     }
