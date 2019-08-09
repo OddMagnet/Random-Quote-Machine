@@ -30,27 +30,27 @@ export default class QuoteBox extends Component {
     }
 
 
-render() {
-    // prepare quote and twitter link
-    const quoteText = encodeURIComponent(`"${this.state.quote.text}"\n - ${this.state.quote.author}`);
-    const twitterLink = `https://twitter.com/intent/tweet/?text=${quoteText}&hashtags=FreeCodeCamp,RandomQuoteMachine`;
+    render() {
+        // prepare quote and twitter link
+        const quoteText = encodeURIComponent(`"${this.state.quote.text}"\n - ${this.state.quote.author}`);
+        const twitterLink = `https://twitter.com/intent/tweet/?text=${quoteText}&hashtags=FreeCodeCamp,RandomQuoteMachine`;
 
-    return (
-        <div>
-            <blockquote id="quote-box" className="quote-box text-center">
-                <p id="text" className="quote-text">
-                    {this.state.quote.text}
-                </p>
-                <p id="author" className="quote-author">
-                    {this.state.quote.author}
-                </p>
-                <div className="buttons">
-                    <div id="new-quote" className="btn btn-secondary" onClick={this.getNewRandomQuote}>
-                        New Quote
+        return (
+            <div>
+                <blockquote id="quote-box" className="quote-box text-center">
+                    <p id="text" className="quote-text">
+                        {this.state.quote.text}
+                    </p>
+                    <p id="author" className="quote-author">
+                        {this.state.quote.author}
+                    </p>
+                    <div className="buttons">
+                        <div id="new-quote" className="btn btn-secondary" onClick={this.getNewRandomQuote}>
+                            New Quote
                         </div>
-                </div>
-            </blockquote>
-        </div>
-    );
-}
+                    </div>
+                </blockquote>
+            </div>
+        );
+    }
 }
