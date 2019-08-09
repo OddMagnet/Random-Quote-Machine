@@ -11,8 +11,8 @@ export default class QuoteBox extends Component {
 
         this.state = {
             quote: {
-                text: 'TESTQUOTE',
-                author: 'TESTAUTHOR'
+                text: 'This is a random quote machine',
+                author: 'Michael Brünen'
             }
         }
 
@@ -45,10 +45,10 @@ export default class QuoteBox extends Component {
                         {this.state.quote.author}
                     </p>
                     <div className="buttons">
-                        <div id="new-quote" className="btn btn-secondary" onClick={this.getNewRandomQuote}>
+                        <div id="new-quote" className="btn btn-secondary float-right" onClick={this.getNewRandomQuote}>
                             New Quote
                         </div>
-                        <a id="tweet-quote" className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={twitterLink}>
+                        <a id="tweet-quote" className="btn btn-primary float-left" target="_blank" rel="noopener noreferrer" href={twitterLink}>
                             Tweet
                         </a>
                     </div>
