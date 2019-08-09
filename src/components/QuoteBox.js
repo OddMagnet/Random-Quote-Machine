@@ -48,6 +48,9 @@ export default class QuoteBox extends Component {
                         <div id="new-quote" className="btn btn-secondary" onClick={this.getNewRandomQuote}>
                             New Quote
                         </div>
+                        <a id="tweet-quote" className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={twitterLink}>
+                            Tweet
+                        </a>
                     </div>
                 </blockquote>
             </div>
