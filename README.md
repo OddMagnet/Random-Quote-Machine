@@ -4,9 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Learning Frontend-Libraries with FreeCodeCamp, this project is based on the following challenge:
 [Random Quote Machine](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine/)
 
-## View the app
-[Click here](https://oddmagnet.github.io/Random-Quote-Machine/index.html) to view the app
-
 ## Available Scripts
 
 In the project directory, you can run:
