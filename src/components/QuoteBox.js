@@ -11,10 +11,12 @@ export default class QuoteBox extends Component {
 
         this.state = {
             quote: {
-                text: '',
-                author: ''
+                text: 'TESTQUOTE',
+                author: 'TESTAUTHOR'
             }
         }
+
+        this.getNewRandomQuote = this.getNewRandomQuote.bind(this);
     }
 
     getNewRandomQuote() {
@@ -38,8 +40,26 @@ export default class QuoteBox extends Component {
     }
 
     render() {
+        // prepare quote and twitter link
+        const quoteText = encodeURIComponent(`"${this.state.quote.text}"\n - ${this.state.quote.author}`);
+        const twitterLink = `https://twitter.com/intent/tweet/?text=${quoteText}&hashtags=FreeCodeCamp,RandomQuoteMachine`;
+
         return (
-            <h1>HELLO WORLD</h1>
+            <div>
+                <blockquote id="quote-box" className="quote-box text-center">
+                    <p id="text" className="quote-text">
+                        {this.state.quote.text}
+                    </p>
+                    <p id="author" className="quote-author">
+                        {this.state.quote.author}
+                    </p>
+                    <div className="buttons">
+                        <div id="new-quote" className="btn btn-secondary" onClick={this.getNewRandomQuote}>
+                            New Quote
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
         );
     }
 }
