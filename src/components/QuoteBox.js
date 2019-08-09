@@ -1,10 +1,10 @@
 // This component represents the Box containing the random quotes.
 // New Quote will be fetched via the RandomQuoteService
 
-import React, { component } from 'react';
+import React, { Component } from 'react';
 import { getQuote } from '../services/RandomQuoteService';
 
-export default class QuoteBox extends component {
+export default class QuoteBox extends Component {
 
     constructor() {
         super();
@@ -35,5 +35,11 @@ export default class QuoteBox extends component {
                     }
                 })
             });
+    }
+
+    render() {
+        return (
+            <h1>HELLO WORLD</h1>
+        );
     }
 }
